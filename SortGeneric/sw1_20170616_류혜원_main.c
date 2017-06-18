@@ -8,9 +8,8 @@ int main(){
 	
 	getSaleInfo(p);
 
-	printf("품명순 정렬\n");
 	PrintAllProductOrderedByName(p);
-		PrintAllProductOrderedByTotalPrice(p);
+	PrintAllProductOrderedByTotalPrice(p);
 	
 	return 0;
 }

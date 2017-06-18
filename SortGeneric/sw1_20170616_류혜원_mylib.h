@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-#define ProductTotalNumber 10
+#define ProductTotalNumber 5
 typedef struct _Product{
 	char name[20];
 	double cost;
