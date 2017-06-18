@@ -5,11 +5,11 @@ int main(){
 
 	getProductInfo(p);
 	PrintAllProducts(p);
-	
+
 	getSaleInfo(p);
 
 	PrintAllProductOrderedByName(p);
 	PrintAllProductOrderedByTotalPrice(p);
-	
+
 	return 0;
 }

@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-#define ProductTotalNumber 5
+#define ProductTotalNumber 10
 typedef struct _Product{
 	char name[20];
 	double cost;
@@ -24,8 +24,6 @@ void updateProductInfo(Product *p, int index, int amount);
 
 
 void mySort(void * arr, int element_cnt, int element_size, int (*comp_func) (const void * cmp1, const void *cmp2));
-int cmp_str(const void * str1, const void *str2);
-int cmp_double (const void * double1, const void * double2);
 
 int cmp_ProductName(const void * p1, const void *p2);
 int cmp_ProductTotalPrice (const void * p1, const void * p2);

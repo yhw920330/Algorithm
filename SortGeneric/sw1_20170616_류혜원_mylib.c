@@ -45,7 +45,7 @@ int checkDuplication(const Product *p, int max, const char name[]){
 }
 
 void PrintProduct(Product *p, int idx){
-	printf("[%d ]품목명: %-20s\t 단가:%10.3lf\t 수량:%5d\t 판매금액: %.3lf\n",idx, p[idx].name,p[idx].cost,p[idx].amount,p[idx].total_price);
+	printf("[%d ]품목명: %-20s\t 단가:%10.3lf\t 수량:%5d\t 판매금액: %.3lf\n",idx+1, p[idx].name,p[idx].cost,p[idx].amount,p[idx].total_price);
 }
 void PrintAllProducts(Product *p){
 	int i=0;
@@ -117,16 +117,13 @@ void mySort(void * arr, int element_cnt, int element_size, int (*comp_func) (con
 	for(i=0; i< loopMax ; i++){
 		k=0;
 		innerLoop = loopMax -i;
-		for(j=0; j<innerLoop; j++){
+		for(j=0; j < innerLoop; j++){
 			if( comp_func( (char *)arr + j*element_size, (char *) arr+ (j+1)*element_size)   >0 ) {
 				memcpy(tp, (char *) arr +  j * element_size, element_size);
 				memcpy((char *) arr +  j * element_size ,	(char *) arr +  (j +1) * element_size, element_size); 
 				memcpy((char *) arr +  (j+1) * element_size, tp, element_size);
-				k=1;
 			}
 		}
-		if(k==0)
-			i=loopMax;
 	}
 }
 
@@ -145,13 +142,15 @@ int cmp_ProductTotalPrice (const void * p1, const void * p2){
 
 
 void PrintAllProductOrderedByName(Product *p){
-	printf("---품명 순 정렬------\n");
+	
+	printf("-------------판매명순-------------\n");
 	mySort(p,ProductTotalNumber, sizeof(Product),cmp_ProductName);
 	PrintAllProducts(p);
 }
 
 void PrintAllProductOrderedByTotalPrice(Product *p){
-	printf("----판매량 순 정렬------\n");
+	
+	printf("-------------판매액순-------------\n");
 	mySort(p,ProductTotalNumber, sizeof(Product), cmp_ProductTotalPrice);
 	PrintAllProducts(p);
 }
