@@ -1,0 +1,5 @@
+cd
+ls
+dir
+ls -al
+mv a.txt b.txt
